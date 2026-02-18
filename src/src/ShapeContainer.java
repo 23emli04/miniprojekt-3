@@ -62,12 +62,7 @@ public class ShapeContainer extends JPanel implements Pointable {
     public void setSelected(Shape selected) {
         this.selected = selected;
     }
-    public void setMarkedShape() {
-        markedShape = new ShapeDecorator(selected);
-    }
-    public Shape getMarkedShape() {
-        return markedShape;
-    }
+
     public void addShape(Shape shape) {
         shapes.add(shape);
     }

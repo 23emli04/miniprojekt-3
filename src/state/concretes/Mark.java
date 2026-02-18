@@ -1,9 +1,9 @@
 package state.concretes;
 
 import src.Point;
+import src.decorator.CrossHairDecorator;
 import src.shape.Shape;
 import src.ShapeContainer;
-import src.decorator.ShapeDecorator;
 import state.ModeState;
 
 public class Mark implements ModeState {
@@ -11,9 +11,8 @@ public class Mark implements ModeState {
     public void pointerDown(ShapeContainer context, Point point) {
             context.select(point);
         if (context.getSelected() != null) {
-            context.setMarkedShape();
-            context.removeShape(context.getSelected());
-            context.addShape(context.getMarkedShape());
+            Shape markedShape = new CrossHairDecorator(context.getSelected());
+            context.addShape(markedShape);
         }
         context.repaint();
     }
