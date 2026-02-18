@@ -11,8 +11,7 @@ public class Mark implements ModeState {
     public void pointerDown(ShapeContainer context, Point point) {
             context.select(point);
         if (context.getSelected() != null) {
-            Shape markedShape = new CrossHairDecorator(context.getSelected());
-            context.addShape(markedShape);
+           context.addDecorator(context.getSelected());
         }
         context.repaint();
     }

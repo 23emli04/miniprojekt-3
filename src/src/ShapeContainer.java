@@ -1,5 +1,7 @@
 package src;
 import src.decorator.ShapeDecorator;
+import src.factory.ShapeFactory;
+import src.factory.ShapeFactoryConcrete;
 import state.ModeState;
 import state.concretes.InsertCircle;
 import java.awt.Color;
@@ -15,10 +17,12 @@ public class ShapeContainer extends JPanel implements Pointable {
     private List<Shape> shapes = new LinkedList<Shape>();
     private Shape selected;
     private Shape markedShape;
+    private ShapeFactory shapeFactory;
 
     public ShapeContainer() {
         super();
         MouseHandler mouseHandler = new MouseHandler(this);
+        shapeFactory = new ShapeFactoryConcrete();
         this.addMouseListener(mouseHandler);
         this.addMouseMotionListener(mouseHandler);
         this.setBackground(Color.white);
@@ -70,5 +74,18 @@ public class ShapeContainer extends JPanel implements Pointable {
     public void removeShape(Shape shape) {
         shapes.remove(shape);
     }
+    public void addCircle(Point point) {
+        shapes.add(shapeFactory.createCircle(point));
+    }
+    public void addRectangle(Point point) {
+        shapes.add(shapeFactory.createRectangle(point));
+    }
+    public void addFace(Point point) {
+        shapes.add(shapeFactory.createFace(point));
+    }
+    public void addDecorator(Point point) {
+        shapes.add(shapeFactory.createDecorator(point));
+    }
+
 }
 

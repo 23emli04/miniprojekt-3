@@ -11,7 +11,7 @@ public class InsertFace implements ModeState {
 
     @Override
     public void pointerDown(ShapeContainer context, Point point) {
-        context.addShape(new FaceComposite(point));
+       context.addFace(point);
         context.repaint();
     }
 

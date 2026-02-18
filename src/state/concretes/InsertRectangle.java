@@ -8,7 +8,7 @@ import state.ModeState;
 public class InsertRectangle implements ModeState {
     @Override
     public void pointerDown(ShapeContainer context, Point point) {
-        context.addShape(new Rectangle(point, Math.random() * 50.0, Math.random() * 50.0));
+        context.addRectangle(point);
         context.repaint();
     }
 
