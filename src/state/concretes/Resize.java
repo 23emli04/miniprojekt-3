@@ -18,6 +18,7 @@ public class Resize implements ModeState {
     @Override
     public void pointerMoved(ShapeContainer context, Point point) {
         context.getSelected().resizeTo(point);
+        context.repaint();
     }
 
 

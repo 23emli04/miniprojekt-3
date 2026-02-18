@@ -18,6 +18,7 @@ public class Move implements ModeState {
     @Override
     public void pointerMoved(ShapeContainer context, Point point) {
         context.getSelected().moveTo(point);
+        context.repaint();
     }
 
 

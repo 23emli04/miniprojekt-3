@@ -24,13 +24,10 @@ public class ShapeContainer extends JPanel implements Pointable {
         this.setBackground(Color.white);
     }
 
-    public void paintComponent(Graphics g)
-    {
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         for (Shape shape : shapes)
             shape.draw(g);
-
     }
 
     public void select(Point point) {
@@ -41,7 +38,6 @@ public class ShapeContainer extends JPanel implements Pointable {
             }
         }
     }
-
     public List<Shape> getShapes() {
         return shapes;
     }
@@ -57,9 +53,11 @@ public class ShapeContainer extends JPanel implements Pointable {
     public void pointerMoved(Point point, boolean pointerDown) {
         if (selected != null && pointerDown) {
            modeState.pointerMoved(this, point);
-           repaint();
         }
     }
+
+    //Getter & Setters
+
     public void setModeState(ModeState modeState) {
         this.modeState = modeState;
     }
