@@ -1,3 +1,7 @@
+package src;
+
+import state.concretes.*;
+
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
@@ -21,12 +25,12 @@ public class ShapeApp extends JFrame
   public void createMenue()
     {
     JMenu menu = new JMenu("Modes");
-    createMenuItem(menu, "Insert", e -> shapeContainer.setMode(ShapeContainer.Mode.INSERT));
-    createMenuItem(menu, "Move", e -> shapeContainer.setMode(ShapeContainer.Mode.MOVE));
-    createMenuItem(menu, "Delete", e -> shapeContainer.setMode(ShapeContainer.Mode.DELETE));
-    createMenuItem(menu, "Mark", e -> shapeContainer.setMode(ShapeContainer.Mode.MARK));
-    createMenuItem(menu, "Unmark", e -> shapeContainer.setMode(ShapeContainer.Mode.UNMARK));
-    createMenuItem(menu, "Resize", e -> shapeContainer.setMode(ShapeContainer.Mode.RESIZE));
+    createMenuItem(menu, "Insert", e -> shapeContainer.setModeState(new Insert()));
+    createMenuItem(menu, "Move", e -> shapeContainer.setModeState(new Move()));
+    createMenuItem(menu, "Delete", e -> shapeContainer.setModeState(new Delete()));
+    createMenuItem(menu, "Mark", e -> shapeContainer.setModeState(new Mark()));
+    createMenuItem(menu, "Unmark", e -> shapeContainer.setModeState(new Unmark()));
+    createMenuItem(menu, "Resize", e -> shapeContainer.setModeState(new Resize()));
     JMenuBar menuBar = new JMenuBar();
     menuBar.add(menu);
     this.setJMenuBar(menuBar);
