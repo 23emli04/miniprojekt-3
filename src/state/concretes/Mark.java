@@ -21,6 +21,7 @@ public class Mark implements ModeState {
     @Override
     public void pointerUp(ShapeContainer context, Point point) {
 
+        //Test
     }
 
     @Override
