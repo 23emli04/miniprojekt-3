@@ -1,4 +1,7 @@
+package src.shape;
+
 import java.awt.Graphics;
+import src.Point;
 
 public interface Shape
   {

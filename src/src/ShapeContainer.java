@@ -1,7 +1,12 @@
+package src;
+
+import src.shape.Shape;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.LinkedList;
 import java.util.List;
+import src.shape.Circle;
+import src.Point;
 
 import javax.swing.JPanel;
 

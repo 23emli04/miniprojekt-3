@@ -1,3 +1,7 @@
+package src;
+
+import src.shape.Shape;
+import src.Point;
 import java.awt.Graphics;
 
 public class ShapeDecorator implements Shape
