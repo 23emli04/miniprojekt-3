@@ -56,7 +56,6 @@ public class Rectangle implements Shape {
     public void moveTo(Point point) {
         center.moveTo(point);
     }
-
     @Override
     public void move(double dx, double dy) {
         center.move(dx, dy);

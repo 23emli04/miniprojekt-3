@@ -2,7 +2,6 @@ package state.concretes;
 
 import src.Point;
 import src.ShapeContainer;
-import src.shape.Circle;
 import src.shape.Rectangle;
 import state.ModeState;
 
