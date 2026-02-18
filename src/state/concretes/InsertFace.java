@@ -1,20 +1,18 @@
 package state.concretes;
 
 import src.Point;
-import src.shape.Shape;
 import src.ShapeContainer;
+import src.shape.Circle;
+import src.shape.FaceComposite;
+import src.shape.Rectangle;
 import state.ModeState;
 
-public class Unmark implements ModeState {
+public class InsertFace implements ModeState {
+
     @Override
     public void pointerDown(ShapeContainer context, Point point) {
-        context.select(point);
-        if (context.getSelected() != null) {
-            Shape unmarkedShape = context.getSelected().peel();
-            context.removeShape(context.getSelected());
-            context.addShape(unmarkedShape);
-            context.repaint();
-        }
+        context.addShape(new FaceComposite(point));
+        context.repaint();
     }
 
     @Override
@@ -26,6 +24,4 @@ public class Unmark implements ModeState {
     public void pointerMoved(ShapeContainer context, Point point) {
 
     }
-
-
 }

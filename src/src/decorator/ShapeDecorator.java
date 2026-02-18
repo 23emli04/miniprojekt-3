@@ -1,4 +1,7 @@
-package src;
+package src.decorator;
+
+import src.Point;
+import src.shape.Shape;
 
 import java.awt.Graphics;
 import src.shape.Shape;

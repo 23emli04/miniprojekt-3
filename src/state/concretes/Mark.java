@@ -3,7 +3,7 @@ package state.concretes;
 import src.Point;
 import src.shape.Shape;
 import src.ShapeContainer;
-import src.ShapeDecorator;
+import src.decorator.ShapeDecorator;
 import state.ModeState;
 
 public class Mark implements ModeState {
@@ -11,9 +11,9 @@ public class Mark implements ModeState {
     public void pointerDown(ShapeContainer context, Point point) {
             context.select(point);
         if (context.getSelected() != null) {
-            Shape markedShape = new ShapeDecorator(context.getSelected());
-            context.getShapes().remove(context.getSelected());
-            context.getShapes().add(markedShape);
+            context.setMarkedShape();
+            context.removeShape(context.getSelected());
+            context.addShape(context.getMarkedShape());
         }
         context.repaint();
     }

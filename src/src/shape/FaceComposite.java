@@ -9,8 +9,22 @@ public class FaceComposite implements Shape {
     private Point center;
     List<Shape> children = new ArrayList<>();
 
-    public FaceComposite(Circle head, Circle leftEye, Circle rightEye, Rectangle nose, Rectangle mouth){
-        this.center = head.getPosition();
+    public FaceComposite(Point center) {
+        this.center = center;
+
+        Circle head = new Circle(center, 100);
+
+        Circle leftEye = new Circle(
+                new Point(center.getX() - 30, center.getY() - 30), 15);
+
+        Circle rightEye = new Circle(
+                new Point(center.getX() + 30, center.getY() - 30), 15);
+
+        Rectangle nose = new Rectangle(
+                new Point(center.getX(), center.getY()), 10, 20);
+
+        Rectangle mouth = new Rectangle(
+                new Point(center.getX(), center.getY() + 40), 40, 10);
 
         children.add(head);
         children.add(leftEye);

@@ -1,23 +1,20 @@
 package src;
-
-
+import src.decorator.ShapeDecorator;
 import state.ModeState;
-import state.concretes.Insert;
-
+import state.concretes.InsertCircle;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.LinkedList;
 import java.util.List;
-
 import src.shape.*;
-
 import javax.swing.JPanel;
 
 public class ShapeContainer extends JPanel implements Pointable {
-    private ModeState modeState = new Insert();
+    private ModeState modeState = new InsertCircle();
     private static final long serialVersionUID = 1L;
     private List<Shape> shapes = new LinkedList<Shape>();
     private Shape selected;
+    private Shape markedShape;
 
     public ShapeContainer() {
         super();
@@ -41,35 +38,42 @@ public class ShapeContainer extends JPanel implements Pointable {
             }
         }
     }
-    public List<Shape> getShapes() {
-        return shapes;
-    }
 
     public void pointerDown(Point point) {
         modeState.pointerDown(this, point);
     }
-
     public void pointerUp(Point point) {
         selected = null;
     }
-
     public void pointerMoved(Point point, boolean pointerDown) {
         if (selected != null && pointerDown) {
            modeState.pointerMoved(this, point);
         }
     }
 
-    //Getter & Setters
 
+    //Getter & Setters
     public void setModeState(ModeState modeState) {
         this.modeState = modeState;
     }
-
     public Shape getSelected() {
         return selected;
     }
     public void setSelected(Shape selected) {
         this.selected = selected;
+    }
+    public void setMarkedShape() {
+        markedShape = new ShapeDecorator(selected);
+    }
+    public Shape getMarkedShape() {
+        return markedShape;
+    }
+    public void addShape(Shape shape) {
+        shapes.add(shape);
+    }
+
+    public void removeShape(Shape shape) {
+        shapes.remove(shape);
     }
 }
 

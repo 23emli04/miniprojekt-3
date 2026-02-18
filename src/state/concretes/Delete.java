@@ -10,7 +10,7 @@ public class Delete implements ModeState {
     public void pointerDown(ShapeContainer context, Point point) {
         context.select(point);
         if (context.getSelected() != null)
-            context.getShapes().remove(context.getSelected());
+            context.removeShape(context.getSelected());
         context.setSelected(null);
         context.repaint();
     }
