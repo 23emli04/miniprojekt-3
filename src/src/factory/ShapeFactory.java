@@ -8,5 +8,6 @@ public interface ShapeFactory {
     public Shape createRectangle(Point point);
     public Shape createFace(Point point);
 
-    Shape createDecorator(Shape shape);
+    Shape createCrossHairDecorator(Shape shape);
+    Shape createHighlightDecorator(Shape shape);
 }

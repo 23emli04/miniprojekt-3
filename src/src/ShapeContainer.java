@@ -81,7 +81,7 @@ public class ShapeContainer extends JPanel implements Pointable {
         shapes.add(shapeFactory.createFace(point));
     }
     public void addDecorator(Shape shape) {
-        shapes.add(shapeFactory.createDecorator(shape));
+        shapes.add(shapeFactory.createCrossHairDecorator(shape));
     }
 
 }

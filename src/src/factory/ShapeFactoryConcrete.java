@@ -2,6 +2,7 @@ package src.factory;
 
 import src.Point;
 import src.decorator.CrossHairDecorator;
+import src.decorator.HighlightDecorator;
 import src.shape.Circle;
 import src.shape.FaceComposite;
 import src.shape.Rectangle;
@@ -25,7 +26,13 @@ public class ShapeFactoryConcrete implements ShapeFactory {
     }
 
     @Override
-    public Shape createDecorator(Shape shape) {
+    public Shape createCrossHairDecorator(Shape shape) {
         return new CrossHairDecorator(shape);
     }
+
+    @Override
+    public Shape createHighlightDecorator(Shape shape) {
+        return new HighlightDecorator(shape);
+    }
+
 }
