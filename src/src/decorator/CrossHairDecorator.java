@@ -15,7 +15,7 @@ public class CrossHairDecorator extends Decorator{
     @Override
     public void draw(Graphics g){
         Point position = super.getPosition();
-
+        super.draw(g);
         int cx = (int)(position.getX() + 0.5);
         int cy = (int)(position.getY() + 0.5);
         int halfW = (int)(getWidth() / 2.0 + 0.5);

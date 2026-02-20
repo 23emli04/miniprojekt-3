@@ -13,7 +13,7 @@ public abstract class Decorator implements Shape {
     }
     @Override
     public void draw(Graphics g){
-
+        decoratee.draw(g);
     };
 
     @Override

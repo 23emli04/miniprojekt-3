@@ -16,7 +16,6 @@ public class ShapeContainer extends JPanel implements Pointable {
     private static final long serialVersionUID = 1L;
     private List<Shape> shapes = new LinkedList<Shape>();
     private Shape selected;
-    private Shape markedShape;
     private ShapeFactory shapeFactory;
 
     public ShapeContainer() {
@@ -70,7 +69,6 @@ public class ShapeContainer extends JPanel implements Pointable {
     public void addShape(Shape shape) {
         shapes.add(shape);
     }
-
     public void removeShape(Shape shape) {
         shapes.remove(shape);
     }
@@ -83,8 +81,8 @@ public class ShapeContainer extends JPanel implements Pointable {
     public void addFace(Point point) {
         shapes.add(shapeFactory.createFace(point));
     }
-    public void addDecorator(Point point) {
-        shapes.add(shapeFactory.createDecorator(point));
+    public void addDecorator(Shape shape) {
+        shapes.add(shapeFactory.createDecorator(shape));
     }
 
 }
