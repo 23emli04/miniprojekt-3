@@ -1,5 +1,4 @@
 package src;
-import src.decorator.ShapeDecorator;
 import src.factory.ShapeFactory;
 import src.factory.ShapeFactoryConcrete;
 import state.ModeState;
